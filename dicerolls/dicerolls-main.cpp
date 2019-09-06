@@ -1,6 +1,7 @@
 ﻿/** 
    By Dr. Jan Pearce to explore arrays and pseudo-randomness
    Created for CSC 236 Data Structures at Berea College
+   Names: Liberty Mupotsa, Jalen Prater
  */
 
 #include <iostream> //for input & output
@@ -36,7 +37,7 @@ Dependent upon the Getrandom class above. */
 public:
 	Dice(){// default constructor assumes a 6-sided die.
 		self_roll_count_ = 0;
-		self_sides_ = 6;	
+		self_sides_ = 20;	
 	}
 	Dice(int sides){        // constructor for any size dice
 		self_roll_count_ = 0;
@@ -70,22 +71,30 @@ int main(){
 	char stopme;
 	int thisroll;
 	int numrolls = 12;
-	int tallyroll[13] = {0}; // intializes tallyroll to 0
-
+	int tallyroll[300] = {0}; // intializes tallyroll to 0
+	int dsize;
+	
 	//FIXME: create a new variable and interact with the user here
 
 	Dice die6;					// make a six-sided die
 	//Dice die16(16);             // make a 16-sided die
 
 	//FIXME: Create the two dice you need here.
-
+	cout << "What size if the dice do you want  to roll?" << endl;
 	cout << "This loop displays " << numrolls << " rolls of a "<< die6.get_sides() << "-sided die:\n" << endl;
+	cin >> dsize;
+	Dice diceone(dsize);
+	Dice dice2(dsize);
+	
 	for (int i = 0; i < numrolls; i++){
-		thisroll = die6.roll(); //roll the die
+		//thisroll = die6.roll(); //roll the die
+		thisroll = diceone.roll() + dice2.roll();
 		tallyroll[thisroll]++; // increment count of this roll value
 		cout << "Roll " << i << " is " << thisroll << "." << endl;
 	}
-	cout << "\nRolled the die " << die6.get_roll_count() << " times.\n" << endl;
+	//cout << "\nRolled the die " << die6.get_roll_count() << " times.\n" << endl;
+	cout << "\n Rolled the die " << diceone.get_roll_count() << " times.\n" << endl;
+	cout << "\n Rolled the die " << dice2.get_roll_count() << " times.\n" << endl;
 
 	//FIXME: write a loop that runs for the number of rolls you want to make
 	//       Inside the loop roll both dice, sum them together, 

@@ -96,6 +96,9 @@ int main(){
 	cout << "\n Rolled the die " << diceone.get_roll_count() << " times.\n" << endl;
 	cout << "\n Rolled the die " << dice2.get_roll_count() << " times.\n" << endl;
 
+	for (int i = 2; i <= 2 * dsize; i++) {
+	}
+
 	//FIXME: write a loop that runs for the number of rolls you want to make
 	//       Inside the loop roll both dice, sum them together, 
 	//       and increment the correct location in tallyroll[].

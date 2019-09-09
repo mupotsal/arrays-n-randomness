@@ -81,30 +81,43 @@ int main(){
 
 	//FIXME: Create the two dice you need here.
 	cout << "What size if the dice do you want  to roll?" << endl;
-	cout << "This loop displays " << numrolls << " rolls of a "<< die6.get_sides() << "-sided die:\n" << endl;
+	
 	cin >> dsize;
 	Dice diceone(dsize);
 	Dice dice2(dsize);
-	
+	cout << "This loop displays " << numrolls << " rolls of a " << diceone.get_sides() << "-sided die:\n" << endl;
 	for (int i = 0; i < numrolls; i++){
+		
 		//thisroll = die6.roll(); //roll the die
 		thisroll = diceone.roll() + dice2.roll();
 		tallyroll[thisroll]++; // increment count of this roll value
-		cout << "Roll " << i << " is " << thisroll << "." << endl;
+		//cout << "Roll " << i << " is " << thisroll << "." << endl;
 	}
 	//cout << "\nRolled the die " << die6.get_roll_count() << " times.\n" << endl;
 	cout << "\n Rolled the die " << diceone.get_roll_count() << " times.\n" << endl;
-	cout << "\n Rolled the die " << dice2.get_roll_count() << " times.\n" << endl;
+	//cout << "\n Rolled the die " << dice2.get_roll_count() << " times.\n" << endl;
 
 	//FIXME: write a loop that runs for the number of rolls you want to make
 	//       Inside the loop roll both dice, sum them together, 
 	//       and increment the correct location in tallyroll[].
 
 	//FIXME: write a loop that outputs all of the values of tallyroll[] and their counts
+	for (int i = 2; i <= 2 * dsize; i++) {
+		cout <<i<< " was rolled "<< tallyroll[i] << endl;
+		//cout << &tallyroll[i] << endl;
+
+	}
+	
 
 	cin >> stopme; //holds open the window in some cases
 	return 0;
 }
 
+
+//
+//
+//for (int i = 0; i < 12; i++) {
+//	cout << tallyroll[i] << endl;
+//	cout << "id: " << tallyroll[i] << endl;
 
 
